@@ -1,4 +1,4 @@
-ZSH=$HOME/.oh-my-zsh
+ZSH=~/.oh-my-zsh
 source ~/.nvm/nvm.sh
 ZSH_THEME="af-magic"
 plugins=(git)
@@ -12,5 +12,4 @@ alias eu='cd ~/Drive/projects/euler'
 alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
 alias proj="cd ~/Drive/projects/"
 alias desk='cd ~/Desktop'
-unalias gm
 
