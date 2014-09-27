@@ -22,8 +22,12 @@ map <up> g<up>
 nmap yyy maggyG`a
 nmap j gj
 nmap k gk
-nnoremap <Leader>f H<Leader>f
-let g:EasyMotion_leader_key = '<Leader>'
+nmap f <Leader>f
+map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+map n <Plug>(easymotion-next)
+map N <Plug>(easymotion-previous)
+nmap <Leader>s <Plug>(easymotion-sn)
 set clipboard+=unnamed
 set number
 set nowrap
@@ -33,7 +37,7 @@ set hlsearch
 set incsearch
 "hi Search cterm=bold,standout
 "hi Search ctermfg=LightBlue     search highlighting.. in synt. theme
-"This unsets the "last search pattern" register by hitting return
+"This unsets the last search pattern register by hitting return
 set tabstop=2
 set shiftwidth=2
 set expandtab
