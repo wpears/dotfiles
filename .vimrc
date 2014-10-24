@@ -1,3 +1,4 @@
+set nocompatible               " be iMproved
 let mapleader=" "
 inoremap ;l <Esc>l
 vnoremap < <gv
@@ -25,8 +26,7 @@ nmap k gk
 nmap f <Leader>f
 nmap F <Leader>F
 
-let g:ycm_key_list_select_completion = ['<C-f>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
+let g:ycm_key_list_select_completion = ['<Leader>']
 
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
@@ -52,7 +52,6 @@ set t_Co=256
 colorscheme grb256
 syntax enable 
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
-set nocompatible               " be iMproved
 filetype off                   " required!
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
