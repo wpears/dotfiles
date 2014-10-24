@@ -23,6 +23,11 @@ nmap yyy maggyG`a
 nmap j gj
 nmap k gk
 nmap f <Leader>f
+nmap F <Leader>F
+
+let g:ycm_key_list_select_completion = ['<C-f>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-b>', '<Up>']
+
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map n <Plug>(easymotion-next)
@@ -55,6 +60,7 @@ Bundle 'gmarik/vundle'
 Bundle 'scrooloose/syntastic'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'henrik/vim-indexed-search'
+Bundle 'Valloric/YouCompleteMe'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
