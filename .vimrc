@@ -26,7 +26,7 @@ nmap k gk
 nmap f <Leader>f
 nmap F <Leader>F
 
-let g:ycm_key_list_select_completion = ['<Leader>']
+let g:ycm_key_list_select_completion = ['<CR>']
 
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
