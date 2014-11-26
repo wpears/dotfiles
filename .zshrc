@@ -11,4 +11,5 @@ alias eu='cd ~/Drive/projects/euler'
 alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
 alias proj="cd ~/Drive/projects/"
 alias desk='cd ~/Desktop'
-
+alias http='http-server -s&'
+alias mata='cd ~/Drive/projects/matasano'
