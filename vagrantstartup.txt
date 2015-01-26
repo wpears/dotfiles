@@ -1,0 +1,4 @@
+Clone dotfiles.
+Copy dotfiles to homedir
+Install vundle
+mkdir .vim/colors and copy grb256.vim there
