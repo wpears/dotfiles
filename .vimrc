@@ -53,7 +53,7 @@ colorscheme grb256
 syntax enable 
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/syntastic'
