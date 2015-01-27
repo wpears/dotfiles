@@ -46,23 +46,26 @@ set incsearch
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set backspace=indent,eol,start
 let macvim_skip_colorscheme = 1
 set term=xterm-256color
 set t_Co=256
-colorscheme grb256
 syntax enable 
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
+
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/syntastic'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'henrik/vim-indexed-search'
-Bundle 'Valloric/YouCompleteMe'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'flazz/vim-colorschemes'
+Plugin 'scrooloose/syntastic'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'henrik/vim-indexed-search'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+call vundle#end() 
 filetype plugin indent on     " required!

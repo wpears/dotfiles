@@ -7,7 +7,6 @@ source $HOME/.aliases
 #source /usr/local/bin/virtualenvwrapper.sh
 
 export PATH=~/homebrew/bin:$PATH:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:
-alias vim='mvim -v'
 alias goog='cd ~/Drive'
 alias eu='cd ~/Drive/projects/euler'
 alias octave="exec '/Applications/Octave.app/Contents/Resources/bin/octave'"
