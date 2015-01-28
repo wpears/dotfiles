@@ -69,3 +69,4 @@ Plugin 'honza/vim-snippets'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 call vundle#end() 
 filetype plugin indent on     " required!
+color nightsky
