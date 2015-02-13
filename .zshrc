@@ -1,10 +1,11 @@
 ZSH=~/.oh-my-zsh
 ZSH_THEME="af-magic"
 plugins=(git)
+export VIRTUALENVWRAPPER_PYTHON=~/homebrew/bin/python
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-#source /usr/local/bin/virtualenvwrapper.sh
+source ~/homebrew/bin/virtualenvwrapper.sh
 
 export PATH=~/homebrew/bin:$PATH:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:
 alias goog='cd ~/Drive'
@@ -14,3 +15,4 @@ alias proj="cd ~/Drive/projects/"
 alias desk='cd ~/Desktop'
 alias http='http-server -s&'
 alias mata='cd ~/Drive/projects/matasano'
+alias vim='vim --startuptime ~/.vimlog'
