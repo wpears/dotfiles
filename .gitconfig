@@ -12,7 +12,7 @@
 # behavior, which only pushes the current branch to the corresponding
 # remote branch that 'git pull' uses to update the current branch.
 [push]
-    default = matching
+    default = current
 
 [core]
 	excludesfile = ~/.gitignore_global
