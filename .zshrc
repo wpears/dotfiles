@@ -16,3 +16,4 @@ alias http='http-server -s&'
 alias mata='cd ~/Drive/projects/matasano'
 alias vim='vim --startuptime ~/.vimlog'
 alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
+unalias gm
