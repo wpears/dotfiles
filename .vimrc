@@ -21,6 +21,9 @@ nnoremap l<CR> :lnext<CR>
 map <down> g<down>
 map <up> g<up>
 nmap yyy maggyG`a
+nmap = {v}=
+nmap p pv=
+nmap P Pv=
 nmap j gj
 nmap k gk
 nmap f <Leader>f
