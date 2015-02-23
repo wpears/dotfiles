@@ -2,5 +2,6 @@
   "laxcomma":true,
   "asi":true,
   "laxbreak":true,
-  "expr":true
+  "expr":true,
+  "curly":false
 }
