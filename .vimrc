@@ -17,7 +17,7 @@ nmap s <space>w
 nmap S <space>b
 nmap n nzz
 nmap N Nzz
-nnoremap l<CR> :lnext<CR>
+nnoremap \ :lnext<CR>
 map <down> g<down>
 map <up> g<up>
 nmap yyy maggyG`a
