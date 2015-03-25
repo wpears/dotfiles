@@ -63,6 +63,7 @@ set t_fs=
 "Install powerline fonts from https://github.com/powerline/fonts
 "Preferred iTerm2 fonts are 13pt Inconsolata-dz and 12pt DejaVu Sans
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#whitespace#checks = []
 
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -78,6 +79,7 @@ Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'bling/vim-airline'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end() 
 filetype plugin indent on     " required!
 color nightsky
