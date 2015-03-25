@@ -54,12 +54,20 @@ let macvim_skip_colorscheme = 1
 set term=xterm-256color
 set t_Co=256
 syntax enable 
+set laststatus=2
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
+"Tab titles
+set t_ts=]1;
+set t_fs=
+
+"Install powerline fonts from https://github.com/powerline/fonts
+"Preferred iTerm2 fonts are 13pt Inconsolata-dz and 12pt DejaVu Sans
+let g:airline_powerline_fonts = 1
 
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
@@ -69,6 +77,7 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'bling/vim-airline'
 call vundle#end() 
 filetype plugin indent on     " required!
 color nightsky
