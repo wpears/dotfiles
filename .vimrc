@@ -43,6 +43,7 @@ set hlsearch
 set incsearch
 "hi Search cterm=bold,standout
 "hi Search ctermfg=LightBlue     search highlighting.. in synt. theme
+set nofoldenable    " disable folding
 "This unsets the last search pattern register by hitting return
 set tabstop=2
 set shiftwidth=2
@@ -62,9 +63,9 @@ set t_fs=
 "Preferred iTerm2 fonts are 13pt Inconsolata-dz and 12pt DejaVu Sans
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#whitespace#checks = []
-
 filetype off                   " required!
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/dotfiles
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
