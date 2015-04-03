@@ -15,6 +15,7 @@ alias http='http-server -s&'
 alias mata='cd ~/Drive/projects/matasano'
 alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
 unalias gm
+function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
 function gra() { git remote add $1 "git@github.com:$2.git" ;}
 function grao() { git remote add origin "git@github.com:$1.git" ;}
