@@ -19,3 +19,5 @@ function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
 function gra() { git remote add $1 "git@github.com:$2.git" ;}
 function grao() { git remote add origin "git@github.com:$1.git" ;}
+function addHeader() { find . -type f -name "$1" -exec sed -i '' '1i\
+'"$2" {} \; ;}
