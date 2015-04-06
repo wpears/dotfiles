@@ -3,5 +3,6 @@
   "asi":true,
   "laxbreak":true,
   "expr":true,
-  "curly":false
+  "curly":false,
+  "node":true
 }
