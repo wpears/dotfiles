@@ -14,6 +14,7 @@ alias down='cd ~/Downloads'
 alias http='http-server -s&'
 alias mata='cd ~/Drive/projects/matasano'
 alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
+alias gpg='gpg2'
 unalias gm
 function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
