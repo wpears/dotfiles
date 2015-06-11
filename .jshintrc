@@ -1,8 +1,0 @@
-{
-  "laxcomma":true,
-  "asi":true,
-  "laxbreak":true,
-  "expr":true,
-  "curly":false,
-  "node":true
-}

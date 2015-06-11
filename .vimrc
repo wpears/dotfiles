@@ -28,7 +28,6 @@ nmap f <Leader>f
 nmap F <Leader>F
 
 let g:ycm_key_list_select_completion = ['<CR>']
-
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map n <Plug>(easymotion-next)
@@ -55,6 +54,7 @@ set t_Co=256
 syntax enable 
 set laststatus=2
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
+let g:syntastic_javascript_checkers = ['eslint']
 "Tab titles
 set t_ts=]1;
 set t_fs=

@@ -1,0 +1,42 @@
+env:
+  node: true
+
+ecmaFeatures:
+  arrowFunctions: true
+  binaryLiterals: true
+  blockBindings: true
+  let: true
+  const: true
+  classes: true
+  defaultParams: true
+  destructuring: true
+  forOf: true
+  for-of: true
+  generators: true
+  modules: true
+  objectLiteralComputedProperties: true
+  objectLiteralDuplicateProperties: true
+  objectLiteralShorthandMethods: true
+  objectLiteralShorthandProperties: true
+  octalLiterals: true
+  regexUFlag: true
+  u: true
+  regexYFlag: true
+  y: true
+  restParams: true
+  spread: true
+  superInFunctions: true
+  super: true
+  templateStrings: true
+  unicodeCodePointEscapes: true
+  globalReturn: true
+  return: true
+  jsx: true
+
+rules:
+  laxcomma: true
+  asi: true
+  laxbreak: true
+  expr: true
+  curly: false
+  no-shadow: false
