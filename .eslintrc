@@ -1,6 +1,18 @@
 env:
   node: true
 
+rules:
+  laxcomma: true
+  asi: true
+  laxbreak: true
+  expr: true
+  curly: false
+  no-shadow: false
+  no-underscore-dangle: false
+  space-infix-ops: false
+  quotes: single
+  no-new: false
+
 ecmaFeatures:
   arrowFunctions: true
   binaryLiterals: true
@@ -33,10 +45,3 @@ ecmaFeatures:
   return: true
   jsx: true
 
-rules:
-  laxcomma: true
-  asi: true
-  laxbreak: true
-  expr: true
-  curly: false
-  no-shadow: false
