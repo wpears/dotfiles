@@ -12,6 +12,11 @@ rules:
   space-infix-ops: false
   quotes: single
   no-new: false
+  consistent-return: false
+  new-cap: false
+  no-use-before-define: false
+  semi: false
+  yoda: false
 
 ecmaFeatures:
   arrowFunctions: true
