@@ -79,6 +79,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim' "need to npm install in .vim/bundle/tern_for_vim
 call vundle#end() 
 filetype plugin indent on     " required!
 color nightsky
