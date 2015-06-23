@@ -49,8 +49,6 @@ set shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
 let macvim_skip_colorscheme = 1
-set term=xterm-256color
-set t_Co=256
 syntax enable 
 set laststatus=2
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
@@ -83,3 +81,4 @@ Plugin 'marijnh/tern_for_vim' "need to npm install in .vim/bundle/tern_for_vim
 call vundle#end() 
 filetype plugin indent on     " required!
 color nightsky
+:set completeopt-=preview
