@@ -17,6 +17,7 @@ rules:
   no-use-before-define: false
   semi: false
   yoda: false
+  camelcase: false
 
 ecmaFeatures:
   arrowFunctions: true
