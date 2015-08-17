@@ -2,6 +2,7 @@ env:
   node: true
 
 rules:
+  no-return-assign: false
   laxcomma: true
   asi: true
   laxbreak: true
