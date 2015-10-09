@@ -6,20 +6,8 @@ export VIRTUALENVWRAPPER_PYTHON=~/homebrew/bin/python
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
 
-$(boot2docker shellinit 2>/dev/null)
-
 export PATH=~/homebrew/bin:$PATH:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:
-alias goog='cd ~/Drive'
-alias proj="cd ~/Drive/projects/"
-alias desk='cd ~/Desktop'
-alias down='cd ~/Downloads'
-alias http='http-server -s&'
-alias mata='cd ~/Drive/projects/matasano'
-alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
-alias gpg='gpg2'
-alias bn='babel-node'
-unalias gm
-alias sha='shasum -a 256'
+
 function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
 function gra() { git remote add $1 "git@github.com:$2.git" ;}
@@ -44,3 +32,5 @@ function play {
 
 export NVM_DIR="/Users/pearsallw/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+$(boot2docker shellinit 2>/dev/null)

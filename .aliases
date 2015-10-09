@@ -1,3 +1,12 @@
+# Custom
+alias http='http-server -s&'
+alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
+alias gpg='gpg2'
+alias bn='babel-node'
+alias sha='shasum -a 256'
+alias vi='vim'
+unalias gm
+
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
 alias ...="cd ../.."
@@ -58,7 +67,7 @@ alias week='date +%V'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
-alias localip="ipconfig getifaddr en1"
+alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(\([0-9]\+\.[0-9]\+\.[0-9]\+\.[0-9]\+\)\|[a-fA-F0-9:]\+\)' | sed -e 's/inet6* //'"
 
 # Enhanced WHOIS lookups
