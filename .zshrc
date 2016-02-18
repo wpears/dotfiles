@@ -14,6 +14,7 @@ function gra() { git remote add $1 "git@github.com:$2.git" ;}
 function grao() { git remote add origin "git@github.com:$1.git" ;}
 function addHeader() { find . -type f -name "$1" -exec sed -i '' '1i\
 '"$2" {} \; ;}
+function geojson(){ ogr2ogr -f GeoJSON /vsistdout/ "$1" | head -n4 | tail -n1 | sed '$s/,$//' | jq . ;}
 
 # https://github.com/exogen/dotfiles/blob/730fb8e2b72b2fc3aa3d90b889874bb5195e1d07/.profile#L65
 function play {
