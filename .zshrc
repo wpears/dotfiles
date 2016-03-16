@@ -34,4 +34,4 @@ function play {
 export NVM_DIR="/Users/pearsallw/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-$(boot2docker shellinit 2>/dev/null)
+eval $(docker-machine env default)
