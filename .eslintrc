@@ -1,54 +1,65 @@
-env:
-  node: true
-
-rules:
-  no-return-assign: false
-  laxcomma: true
-  asi: true
-  laxbreak: true
-  expr: true
-  curly: false
-  no-shadow: false
-  no-underscore-dangle: false
-  space-infix-ops: false
-  quotes: single
-  no-new: false
-  consistent-return: false
-  new-cap: false
-  no-use-before-define: false
-  semi: false
-  yoda: false
-  camelcase: false
-
-ecmaFeatures:
-  arrowFunctions: true
-  binaryLiterals: true
-  blockBindings: true
-  let: true
-  const: true
-  classes: true
-  defaultParams: true
-  destructuring: true
-  forOf: true
-  for-of: true
-  generators: true
-  modules: true
-  objectLiteralComputedProperties: true
-  objectLiteralDuplicateProperties: true
-  objectLiteralShorthandMethods: true
-  objectLiteralShorthandProperties: true
-  octalLiterals: true
-  regexUFlag: true
-  u: true
-  regexYFlag: true
-  y: true
-  restParams: true
-  spread: true
-  superInFunctions: true
-  super: true
-  templateStrings: true
-  unicodeCodePointEscapes: true
-  globalReturn: true
-  return: true
-  jsx: true
-
+{
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "node": 1
+  },
+  "rules": {
+    "no-return-assign": 0,
+    "curly": 0,
+    "no-shadow": 0,
+    "no-underscore-dangle": 0,
+    "space-infix-ops": 0,
+    "quotes": [
+      1,
+      "single"
+    ],
+    "no-new": 0,
+    "consistent-return": 0,
+    "new-cap": 0,
+    "no-use-before-define": 0,
+    "semi": 0,
+    "yoda": 0,
+    "camelcase": 0,
+    "prop-types": 0
+  },
+  "parserOptions": {
+    "ecmaFeatures": {
+      "arrowFunctions": 1,
+      "binaryLiterals": 1,
+      "blockBindings": 1,
+      "let": 1,
+      "const": 1,
+      "classes": 1,
+      "defaultParams": 1,
+      "destructuring": 1,
+      "forOf": 1,
+      "for-of": 1,
+      "generators": 1,
+      "modules": 1,
+      "objectLiteralComputedProperties": 1,
+      "objectLiteralDuplicateProperties": 1,
+      "objectLiteralShorthandMethods": 1,
+      "objectLiteralShorthandProperties": 1,
+      "octalLiterals": 1,
+      "regexUFlag": 1,
+      "u": 1,
+      "regexYFlag": 1,
+      "y": 1,
+      "restParams": 1,
+      "spread": 1,
+      "superInFunctions": 1,
+      "super": 1,
+      "templateStrings": 1,
+      "unicodeCodePointEscapes": 1,
+      "globalReturn": 1,
+      "return": 1,
+      "jsx": 1
+    }
+  }
+}sx: 1
