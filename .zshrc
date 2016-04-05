@@ -8,6 +8,14 @@ source $HOME/.aliases
 
 export PATH=~/homebrew/bin:$PATH:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:
 
+function npm() {
+  if [ "$1" == "publish" ]; then
+    command npm login && command npm "$@" || : && command npm logout
+  else
+    command npm "$@"
+  fi
+}
+
 function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
 function gra() { git remote add $1 "git@github.com:$2.git" ;}
@@ -34,4 +42,4 @@ function play {
 export NVM_DIR="/Users/pearsallw/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-eval $(docker-machine env default)
+eval $(docker-machine env default 2> /dev/null)
