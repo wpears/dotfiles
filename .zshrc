@@ -1,7 +1,9 @@
 ZSH=~/.oh-my-zsh
 ZSH_THEME="af-magic"
 plugins=(git)
+git config --global url."https://".insteadOf git://
 export VIRTUALENVWRAPPER_PYTHON=~/homebrew/bin/python
+export WORKON_HOME=$HOME/.virtualenvs
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
@@ -43,3 +45,10 @@ export NVM_DIR="/Users/pearsallw/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 eval $(docker-machine env default 2> /dev/null)
+
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+ulimit -n 8096
+
+#source ~/homebrew/bin/virtualenvwrapper.sh
+#source ~/.dotfiles/lib/zsh-autoenv/autoenv.zsh
