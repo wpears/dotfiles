@@ -5,7 +5,14 @@ alias gpg='gpg2'
 alias bn='babel-node'
 alias sha='shasum -a 256'
 alias vi='vim'
+alias dm='docker-machine'
+alias dp='docker ps'
+alias di='docker images'
 unalias gm
+
+# Nicer grep
+alias grep="grep -i --exclude-dir='node_modules'"
+
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -21,13 +28,15 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias s="cd ~/Sites"
 alias g="git"
-alias gr="grunt"
 alias h="history"
 alias j="jobs"
 alias v="vim"
 alias subl="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 alias o="open"
 alias oo="open ."
+
+# Anti-worm npm publishing
+#alias publish='npm login && npm publish "$0" || : && npm logout'
 
 # Opens current repo in GitHub in browser (origin remote)
 alias gh="open \`git remote -v | grep git@github.com | grep fetch | head -1 | cut -f2 | cut -d' ' -f1 | sed -e's/:/\//' -e 's/git@/http:\/\//'\`"
