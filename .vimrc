@@ -9,6 +9,7 @@ nmap " ciw"<C-r>""<left>;l
 nmap ;' di'hPl2x
 nmap ;" di"hPl2x
 nnoremap dx "_d
+nnoremap x "_x
 nnoremap mn :noh<CR>
 nmap <Tab> i<Tab>;l
 nmap <BS> i<BS>;l
