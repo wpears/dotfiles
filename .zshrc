@@ -2,22 +2,26 @@ ZSH=~/.oh-my-zsh
 ZSH_THEME="af-magic"
 plugins=(git)
 git config --global url."https://".insteadOf git://
-export VIRTUALENVWRAPPER_PYTHON=~/homebrew/bin/python
+
+export PATH=~/homebrew/bin:~/homebrew/sbin:~/homebrew/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:$PATH
+export VIRTUALENVWRAPPER_PYTHON=~/homebrew/opt/python/libexec/bin/python
 export WORKON_HOME=$HOME/.virtualenvs
+export NODE_ENV=dev
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
+source ~/homebrew/bin/virtualenvwrapper.sh
 
-export PATH=~/homebrew/bin:$PATH:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:
 
-function npm() {
-  if [ "$1" == "publish" ]; then
-    command npm login && command npm "$@" || : && command npm logout
-  else
-    command npm "$@"
-  fi
-}
+#function npm() {
+#  if [ "$1" == "publish" ]; then
+#    command npm login && command npm "$@" || : && command npm logout
+#  else
+#    command npm "$@"
+#  fi
+#}
 
+function rand() {  echo "ibase=16;$(xxd -l $1 -p /dev/urandom | awk '{print toupper($0)}')" | bc ;}
 function vimno() { vim --noplugin "$1" ;}
 function clone() { git clone "git@github.com:$1.git" ;}
 function gra() { git remote add $1 "git@github.com:$2.git" ;}
@@ -39,6 +43,10 @@ function play {
                --restrict-filenames \
                --format="bestaudio[ext!=webm]" \
                --exec=afplay "$*"
+}
+
+function gr {
+  grep -riE --exclude='yarn.lock' --exclude-dir='coverage' --exclude-dir='node_modules' --exclude-dir='dist' $* .
 }
 
 export NVM_DIR="/Users/pearsallw/.nvm"
@@ -135,7 +143,7 @@ elif grep-flag-available --exclude=.cvs; then
 fi
 
 # export grep settings
-alias grep="grep -iE --exclude-dir='node_modules' $GREP_OPTIONS"
+alias grep="grep -iE --exclude-dir='coverage' --exclude-dir='node_modules' --exclude-dir='dist' $GREP_OPTIONS"
 
 # clean up
 unset GREP_OPTIONS
