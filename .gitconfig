@@ -123,3 +123,7 @@
 [include]
     path = .gitconfig_local
 
+[url "https://"]
+	insteadOf = git://
+[init]
+	defaultBranch = main
