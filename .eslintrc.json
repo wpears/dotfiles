@@ -1,15 +1,30 @@
 {
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
   "plugins": [
-    "react"
+    "react",
+    "react-hooks",
+    "prettier",
+    "svelte3"
   ],
+  "overrides": [
+      {
+        "files": ["*.svelte"],
+        "processor": "svelte3/svelte3"
+      }
+    ],
   "extends": [
-    "eslint:recommended",
-    "plugin:react/recommended"
+    "eslint:recommended"
   ],
+
   "env": {
     "node": 1,
     "es6": 1,
-    "browser": 1
+    "browser": 1,
+    "jest": 1
   },
   "rules": {
     "no-return-assign": 0,
@@ -29,13 +44,12 @@
     "yoda": 0,
     "camelcase": 0,
     "no-trailing-spaces": 1,
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "parserOptions": {
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "ecmaFeatures": {
-      "jsx": 1
-    }
+    "ecmaVersion": 2019,
+    "sourceType": "module"
   }
 }

@@ -2,16 +2,8 @@ ZSH=~/.oh-my-zsh
 ZSH_THEME="af-magic"
 plugins=(git)
 git config --global url."https://".insteadOf git://
-
-export PATH=~/homebrew/bin:~/homebrew/sbin:~/homebrew/opt/python/libexec/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/local/git/bin:$PATH
-export VIRTUALENVWRAPPER_PYTHON=~/homebrew/opt/python/libexec/bin/python
-export WORKON_HOME=$HOME/.virtualenvs
-export NODE_ENV=dev
-
 source $ZSH/oh-my-zsh.sh
 source $HOME/.aliases
-source ~/homebrew/bin/virtualenvwrapper.sh
-
 
 #function npm() {
 #  if [ "$1" == "publish" ]; then
@@ -46,7 +38,9 @@ function play {
 }
 
 function gr {
-  grep -riE --exclude='yarn.lock' --exclude-dir='coverage' --exclude-dir='node_modules' --exclude-dir='dist' $* .
+  ag -i --ignore-dir={.tox,fixtures,__snapshots__,migrations,static,static_built,coverage,node_modules,dist}\
+  --ignore={yarn.lock,"*.svg","*.map"}\
+  $* .
 }
 
 export NVM_DIR="/Users/pearsallw/.nvm"
@@ -54,98 +48,22 @@ export NVM_DIR="/Users/pearsallw/.nvm"
 
 eval $(docker-machine env default 2> /dev/null)
 
+export JAVA_HOME=~/homebrew/opt/openjdk@11/bin
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 ulimit -n 8096
 
-#source ~/homebrew/bin/virtualenvwrapper.sh
-#source ~/.dotfiles/lib/zsh-autoenv/autoenv.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-###-begin-npm-completion-###
-#
-# npm command completion script
-#
-# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
-# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
-#
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-if type complete &>/dev/null; then
-  _npm_completion () {
-    local words cword
-    if type _get_comp_words_by_ref &>/dev/null; then
-      _get_comp_words_by_ref -n = -n @ -w words -i cword
-    else
-      cword="$COMP_CWORD"
-      words=("${COMP_WORDS[@]}")
-    fi
+export PYENV_ROOT="$HOME/.pyenv"
 
-    local si="$IFS"
-    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
-                           COMP_LINE="$COMP_LINE" \
-                           COMP_POINT="$COMP_POINT" \
-                           npm completion -- "${words[@]}" \
-                           2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  complete -o default -F _npm_completion npm
-elif type compdef &>/dev/null; then
-  _npm_completion() {
-    local si=$IFS
-    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
-                 COMP_LINE=$BUFFER \
-                 COMP_POINT=0 \
-                 npm completion -- "${words[@]}" \
-                 2>/dev/null)
-    IFS=$si
-  }
-  compdef _npm_completion npm
-elif type compctl &>/dev/null; then
-  _npm_completion () {
-    local cword line point words si
-    read -Ac words
-    read -cn cword
-    let cword-=1
-    read -l line
-    read -ln point
-    si="$IFS"
-    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
-                       COMP_LINE="$line" \
-                       COMP_POINT="$point" \
-                       npm completion -- "${words[@]}" \
-                       2>/dev/null)) || return $?
-    IFS="$si"
-  }
-  compctl -K _npm_completion npm
-fi
-###-end-npm-completion-###
+export PATH=$PYENV_ROOT/bin:~/.local/bin:~/.yarn/bin:~/.config/yarn/global/node_modules/.bin:\
+~/homebrew/bin:~/homebrew/sbin:~/homebrew/opt/ruby/bin:$GOPATH/bin:\
+~/homebrew/opt/postgresql@10/bin:$JAVA_HOME:/usr/local/bin:/usr/bin:\
+/usr/sbin:/bin:/sbin:/usr/local/git/bin:~/istio-1.1.7/bin:\
+/Users/pearsallw/.gem/ruby/2.6.0/bin:~/.cargo/bin:\
+/Users/pearsallw/homebrew/opt/openjdk@11/bin:$PATH
 
-#grep replacement, stolen from oh-my-zsh
-#
-# is x grep argument available?
-grep-flag-available() {
-    echo | grep $1 "" >/dev/null 2>&1
-}
-
-GREP_OPTIONS=""
-
-# color grep results
-if grep-flag-available --color=auto; then
-    GREP_OPTIONS+=" --color=auto"
-fi
-
-# ignore VCS folders (if the necessary grep flags are available)
-VCS_FOLDERS="{.bzr,CVS,.git,.hg,.svn}"
-
-if grep-flag-available --exclude-dir=.cvs; then
-    GREP_OPTIONS+=" --exclude-dir=$VCS_FOLDERS"
-elif grep-flag-available --exclude=.cvs; then
-    GREP_OPTIONS+=" --exclude=$VCS_FOLDERS"
-fi
-
-# export grep settings
-alias grep="grep -iE --exclude-dir='coverage' --exclude-dir='node_modules' --exclude-dir='dist' $GREP_OPTIONS"
-
-# clean up
-unset GREP_OPTIONS
-unset VCS_FOLDERS
-unfunction grep-flag-available
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"

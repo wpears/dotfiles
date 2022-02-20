@@ -3,6 +3,7 @@ let mapleader=" "
 inoremap ;l <Esc>l
 vnoremap < <gv
 vnoremap > >gv
+vnoremap p "_dP
 nmap U <C-R>
 nmap ' ciw'<C-r>"'<left>;l
 nmap " ciw"<C-r>""<left>;l
@@ -34,6 +35,8 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-previous)
 nmap <Leader>s <Plug>(easymotion-sn)
+map ] <Plug>(ale_next_wrap)
+map } <Plug>(ale_previous_wrap)
 set clipboard+=unnamed
 set number
 set nowrap
@@ -49,11 +52,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 set backspace=indent,eol,start
+set backupcopy=yes
 let macvim_skip_colorscheme = 1
 syntax enable 
 set laststatus=2
 let g:syntastic_html_tidy_ignore_errors = ['proprietary attribute "async"']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:snipMate = { 'snippet_version' : 1 }
 "Tab titles
 set t_ts=]1;
 set t_fs=
@@ -68,18 +73,35 @@ set rtp+=~/dotfiles
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'
-Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'henrik/vim-indexed-search'
 Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
-Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'marijnh/tern_for_vim' "need to npm install in .vim/bundle/tern_for_vim
+Plugin 'evanleck/vim-svelte'
+Plugin 'w0rp/ale'
+"Plugin 'tomtom/tlib_vim'
+"Plugin 'garbas/vim-snipmate'
+"Plugin 'honza/vim-snippets'
+"Plugin 'leafgarland/typescript-vim'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'bling/vim-airline'
+"Plugin 'marijnh/tern_for_vim' "need to npm install in .vim/bundle/tern_for_vim
 call vundle#end() 
 filetype plugin indent on     " required!
 color nightsky
-:set completeopt-=preview
+set completeopt-=preview
+
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'css': ['eslint'],
+\   'rust': ['rustfmt']
+\}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'python': ['flake8'],
+\   'rust': ['cargo']
+\}
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1

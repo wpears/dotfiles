@@ -1,18 +1,27 @@
+alias f='vim $(fzf)'
+alias cfg='cd ~/Desktop/cfpb/cfgov-refresh'
+alias up='cd ~/Desktop/cfpb/cfgov-refresh/cfgov/unprocessed'
+alias ji='cd ~/Desktop/cfpb/cfgov-refresh/cfgov/jinja2/v1'
+alias sc='cd ~/Desktop/cfpb/cfgov-refresh/cfgov/unprocessed/js/routes/on-demand/simple-chart'
+alias clc="git rev-parse head | head -c10 | pbcopy"
+
 # Custom
 alias http='http-server -s&'
+alias chr="open -a 'Google Chrome' $@"
 alias mkvirtual='source ~/homebrew/bin/virtualenvwrapper.sh'
 alias gpg='gpg2'
 alias bn='babel-node'
 alias sha='shasum -a 256'
 alias vi='vim'
-alias dm='docker-machine'
+alias vii='vim'
+alias da='docker attach --detach-keys="ctrl-c"'
+alias dc='docker-compose'
 alias dp='docker ps'
 alias di='docker images'
-unalias gm
-
-# Nicer grep
-alias grep="grep -i --exclude-dir='node_modules'"
-
+alias eup='docker-compose up'
+alias edo='docker-compose down'
+unalias gm 2>/dev/null
+unalias gr 2>/dev/null
 
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -23,11 +32,19 @@ alias ~="cd ~" # `cd` is probably faster to type though
 alias -- -="cd -"
 function mkcd () { mkdir -p "$@" && cd "$@"; }
 
+alias lines='while read line ; do echo "$line"'
+
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias s="cd ~/Sites"
 alias g="git"
+alias p="git pull"
+alias co="git checkout"
+alias gs="git status"
+alias gcm="git checkout main"
+alias gd="git diff HEAD"
+alias am="git commit -am"
 alias h="history"
 alias j="jobs"
 alias v="vim"
